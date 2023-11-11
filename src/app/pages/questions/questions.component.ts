@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './questions.service';
+import { AuthService } from 'src/app/shared/services/other-services/authorization.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-questions',
@@ -7,38 +9,41 @@ import { QuestionsService } from './questions.service';
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent implements OnInit {
-
+  public formGroup!: FormGroup
   public questions!: Array<any>
   public userQuestionsIds: Array<number> = []
   public userQuestions: Array<any> = []
-  public questionNumberIndex: number = 0
+  public questionNumberIndex: number = -1
   public totalOfCurrentQuestion: number= 0
 
   constructor(
-    private _questionService: QuestionsService
+    private _questionService: QuestionsService,
+    private _authService: AuthService,
+    private fb: FormBuilder
   ){}
 
   ngOnInit(): void {
     this.getQuestions()
+    this.initForm()
+  }
+
+  initForm(){
+    this.formGroup = this.fb.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    })
   }
 
   checkAnswer(answers: any){
-    console.log(answers);
-    
     this.totalOfCurrentQuestion = 0
     answers.forEach((answer: any) => {
-      if (answer.isChecked && answer.isCorrect) {
-        this.totalOfCurrentQuestion += answer.value;
-        console.log(this.totalOfCurrentQuestion);
-        
+      if (answer.isChecked === true && answer.isCorrect === true) {
+        this.totalOfCurrentQuestion = this.totalOfCurrentQuestion + answer.value;
       }
-      if (answer.isChecked && !answer.isCorrect) {
-        this.totalOfCurrentQuestion -= answer.value
-        console.log(this.totalOfCurrentQuestion);
-
+      if (answer.isChecked === true && answer.isCorrect === false) {
+        this.totalOfCurrentQuestion = this.totalOfCurrentQuestion - answer.value
       }
     })
-    console.log(this.totalOfCurrentQuestion);
   }
 
   // Fetch questions
@@ -71,6 +76,13 @@ export class QuestionsComponent implements OnInit {
 
   generateNumber(){
     return Math.floor(Math.random() * 100);
+  }
+
+  registerUser(){
+    this._authService.createAccount(this.formGroup.value).subscribe(res => {
+      console.log(res);
+      
+    })
   }
 
   nextQuestion(){

@@ -22,7 +22,10 @@
             height: 100%;
             button {
                 width: 25%;
-                float: right;
+            }
+            .button-container {
+                display: flex;
+                justify-content: space-between;
             }
             .question-container {
                 ul {
@@ -44,6 +47,31 @@
             min-width: 12%;
             display: flex;
             align-items: center;
+        }
+    }
+}
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    form {
+        .form-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 8px;
+            width: 50%;
+            label {
+                margin-right: 8px;
+            }
+        }
+        .form-button {
+            button {
+                margin-top: 8px;
+            }
         }
     }
 }

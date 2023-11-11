@@ -5,6 +5,7 @@ import { QuestionsComponent } from './questions.component';
 import { QuestionsService } from './questions.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/other-services/authorization.service';
 
 
 
@@ -24,6 +25,6 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
   ],
-  providers:[QuestionsService]
+  providers:[QuestionsService, AuthService]
 })
 export class QuestionsModule { }
