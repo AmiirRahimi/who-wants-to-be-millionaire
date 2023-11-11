@@ -1,0 +1,443 @@
+{
+    "questions": [{
+            "id": 1,
+            "title": "What is the capital of Australia?",
+            "answers": [
+                { "title": "Sydney", "value": 5, "isCorrect": false },
+                { "title": "Melbourne", "value": 5, "isCorrect": false },
+                { "title": "Canberra", "value": 10, "isCorrect": true },
+                { "title": "Perth", "value": 5, "isCorrect": false }
+            ],
+            "points": 10
+        },
+        {
+            "id": 2,
+            "title": "Which programming language is known for its use in web development?",
+            "answers": [
+                { "title": "Python", "value": 5, "isCorrect": false },
+                { "title": "JavaScript", "value": 10, "isCorrect": true },
+                { "title": "Java", "value": 5, "isCorrect": false },
+                { "title": "C++", "value": 5, "isCorrect": false }
+            ],
+            "points": 10
+        },
+        {
+            "id": 3,
+            "title": "What is the largest ocean on Earth?",
+            "answers": [
+                { "title": "Atlantic Ocean", "value": 5, "isCorrect": false },
+                { "title": "Indian Ocean", "value": 5, "isCorrect": false },
+                { "title": "Southern Ocean", "value": 10, "isCorrect": true },
+                { "title": "Arctic Ocean", "value": 5, "isCorrect": false }
+            ],
+            "points": 10
+        },
+        {
+            "id": 4,
+            "title": "Who is the author of 'To Kill a Mockingbird'?",
+            "answers": [
+                { "title": "J.K. Rowling", "value": 5, "isCorrect": false },
+                { "title": "Harper Lee", "value": 10, "isCorrect": true },
+                { "title": "Ernest Hemingway", "value": 5, "isCorrect": false },
+                { "title": "Jane Austen", "value": 5, "isCorrect": false }
+            ],
+            "points": 10
+        },
+        {
+            "id": 5,
+            "title": "Which gas is most abundant in Earth's atmosphere?",
+            "answers": [
+                { "title": "Oxygen", "value": 10, "isCorrect": true },
+                { "title": "Nitrogen", "value": 10, "isCorrect": true },
+                { "title": "Carbon Dioxide", "value": 5, "isCorrect": false },
+                { "title": "Argon", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 6,
+            "title": "What is the largest planet in our solar system?",
+            "answers": [
+                { "title": "Mars", "value": 5, "isCorrect": false },
+                { "title": "Venus", "value": 5, "isCorrect": false },
+                { "title": "Jupiter", "value": 15, "isCorrect": true },
+                { "title": "Saturn", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 7,
+            "title": "In which year did World War I begin?",
+            "answers": [
+                { "title": "1910", "value": 5, "isCorrect": false },
+                { "title": "1914", "value": 15, "isCorrect": true },
+                { "title": "1920", "value": 5, "isCorrect": false },
+                { "title": "1930", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 8,
+            "title": "What is the currency of Japan?",
+            "answers": [
+                { "title": "Yuan", "value": 5, "isCorrect": false },
+                { "title": "Won", "value": 5, "isCorrect": false },
+                { "title": "Yen", "value": 15, "isCorrect": true },
+                { "title": "Ringgit", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 9,
+            "title": "Who painted the Mona Lisa?",
+            "answers": [
+                { "title": "Vincent van Gogh", "value": 5, "isCorrect": false },
+                { "title": "Pablo Picasso", "value": 5, "isCorrect": false },
+                { "title": "Leonardo da Vinci", "value": 15, "isCorrect": true },
+                { "title": "Claude Monet", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 10,
+            "title": "What is the chemical symbol for gold?",
+            "answers": [
+                { "title": "Au", "value": 15, "isCorrect": true },
+                { "title": "Ag", "value": 5, "isCorrect": false },
+                { "title": "Fe", "value": 5, "isCorrect": false },
+                { "title": "Cu", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 11,
+            "title": "Who wrote 'The Great Gatsby'?",
+            "answers": [
+                { "title": "Ernest Hemingway", "value": 5, "isCorrect": false },
+                { "title": "F. Scott Fitzgerald", "value": 15, "isCorrect": true },
+                { "title": "Jane Austen", "value": 5, "isCorrect": false },
+                { "title": "Charles Dickens", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 12,
+            "title": "Which planet is known as the Morning Star and Evening Star?",
+            "answers": [
+                { "title": "Mars", "value": 5, "isCorrect": false },
+                { "title": "Venus", "value": 15, "isCorrect": true },
+                { "title": "Jupiter", "value": 5, "isCorrect": false },
+                { "title": "Saturn", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 13,
+            "title": "What is the primary ingredient in guacamole?",
+            "answers": [
+                { "title": "Tomato", "value": 5, "isCorrect": false },
+                { "title": "Onion", "value": 5, "isCorrect": false },
+                { "title": "Avocado", "value": 15, "isCorrect": true },
+                { "title": "Lime", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 14,
+            "title": "In what year did the Titanic sink?",
+            "answers": [
+                { "title": "1905", "value": 5, "isCorrect": false },
+                { "title": "1912", "value": 15, "isCorrect": true },
+                { "title": "1920", "value": 5, "isCorrect": false },
+                { "title": "1933", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 15,
+            "title": "Which continent is known as the 'Land of the Rising Sun'?",
+            "answers": [
+                { "title": "Europe", "value": 5, "isCorrect": false },
+                { "title": "Asia", "value": 15, "isCorrect": true },
+                { "title": "Africa", "value": 5, "isCorrect": false },
+                { "title": "Australia", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 16,
+            "title": "Who developed the theory of relativity?",
+            "answers": [
+                { "title": "Isaac Newton", "value": 5, "isCorrect": false },
+                { "title": "Galileo Galilei", "value": 5, "isCorrect": false },
+                { "title": "Albert Einstein", "value": 15, "isCorrect": true },
+                { "title": "Niels Bohr", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 17,
+            "title": "What is the largest bird in the world?",
+            "answers": [
+                { "title": "Penguin", "value": 5, "isCorrect": false },
+                { "title": "Ostrich", "value": 15, "isCorrect": true },
+                { "title": "Eagle", "value": 5, "isCorrect": false },
+                { "title": "Albatross", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 18,
+            "title": "Who painted the Sistine Chapel ceiling?",
+            "answers": [
+                { "title": "Vincent van Gogh", "value": 5, "isCorrect": false },
+                { "title": "Leonardo da Vinci", "value": 5, "isCorrect": false },
+                { "title": "Raphael", "value": 5, "isCorrect": false },
+                { "title": "Michelangelo", "value": 15, "isCorrect": true }
+            ],
+            "points": 15
+        },
+        {
+            "id": 19,
+            "title": "Which element has the chemical symbol 'H'?",
+            "answers": [
+                { "title": "Helium", "value": 5, "isCorrect": false },
+                { "title": "Hydrogen", "value": 15, "isCorrect": true },
+                { "title": "Hassium", "value": 5, "isCorrect": false },
+                { "title": "Hafnium", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 20,
+            "title": "In what year did the United States declare independence?",
+            "answers": [
+                { "title": "1776", "value": 15, "isCorrect": true },
+                { "title": "1789", "value": 5, "isCorrect": false },
+                { "title": "1800", "value": 5, "isCorrect": false },
+                { "title": "1825", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 21,
+            "title": "What is the smallest prime number?",
+            "answers": [
+                { "title": "0", "value": 5, "isCorrect": false },
+                { "title": "1", "value": 5, "isCorrect": false },
+                { "title": "2", "value": 15, "isCorrect": true },
+                { "title": "3", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 22,
+            "title": "Which country is known as the 'Land of the Midnight Sun'?",
+            "answers": [
+                { "title": "Norway", "value": 15, "isCorrect": true },
+                { "title": "Sweden", "value": 5, "isCorrect": false },
+                { "title": "Finland", "value": 5, "isCorrect": false },
+                { "title": "Canada", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 23,
+            "title": "Who is the Greek god of the sea?",
+            "answers": [
+                { "title": "Zeus", "value": 5, "isCorrect": false },
+                { "title": "Hades", "value": 5, "isCorrect": false },
+                { "title": "Poseidon", "value": 15, "isCorrect": true },
+                { "title": "Apollo", "value": 5, "isCorrect": false }
+            ],
+            "points": 15
+        },
+        {
+            "id": 24,
+            "title": "What are the primary colors?",
+            "answers": [
+                { "title": "Red", "value": 10, "isCorrect": true },
+                { "title": "Blue", "value": 10, "isCorrect": true },
+                { "title": "Green", "value": 5, "isCorrect": false },
+                { "title": "Yellow", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 25,
+            "title": "Name the continents.",
+            "answers": [
+                { "title": "Africa", "value": 10, "isCorrect": true },
+                { "title": "Europe", "value": 10, "isCorrect": true },
+                { "title": "Asia", "value": 5, "isCorrect": false },
+                { "title": "Antarctica", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 26,
+            "title": "Identify the programming languages.",
+            "answers": [
+                { "title": "Python", "value": 10, "isCorrect": true },
+                { "title": "Java", "value": 10, "isCorrect": true },
+                { "title": "Photoshop", "value": 5, "isCorrect": false },
+                { "title": "HTML", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 27,
+            "title": "Which of the following are mammals?",
+            "answers": [
+                { "title": "Dog", "value": 10, "isCorrect": true },
+                { "title": "Cat", "value": 10, "isCorrect": true },
+                { "title": "Fish", "value": 5, "isCorrect": false },
+                { "title": "Bird", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 28,
+            "title": "Name the planets in our solar system.",
+            "answers": [
+                { "title": "Mars", "value": 10, "isCorrect": true },
+                { "title": "Venus", "value": 10, "isCorrect": true },
+                { "title": "Jupiter", "value": 5, "isCorrect": false },
+                { "title": "Saturn", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 29,
+            "title": "Which elements are noble gases?",
+            "answers": [
+                { "title": "Helium", "value": 10, "isCorrect": true },
+                { "title": "Neon", "value": 10, "isCorrect": true },
+                { "title": "Oxygen", "value": 5, "isCorrect": false },
+                { "title": "Hydrogen", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 30,
+            "title": "Identify the geometric shapes.",
+            "answers": [
+                { "title": "Circle", "value": 10, "isCorrect": true },
+                { "title": "Triangle", "value": 10, "isCorrect": true },
+                { "title": "Cloud", "value": 5, "isCorrect": false },
+                { "title": "Heart", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 31,
+            "title": "Which of the following are programming paradigms?",
+            "answers": [
+                { "title": "Object-oriented", "value": 10, "isCorrect": true },
+                { "title": "Functional", "value": 10, "isCorrect": true },
+                { "title": "Imperative", "value": 5, "isCorrect": false },
+                { "title": "Declarative", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 32,
+            "title": "Name the oceans on Earth.",
+            "answers": [
+                { "title": "Atlantic", "value": 10, "isCorrect": true },
+                { "title": "Pacific", "value": 10, "isCorrect": true },
+                { "title": "Mediterranean", "value": 5, "isCorrect": false },
+                { "title": "Indian", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 33,
+            "title": "Which of the following are primary colors of light?",
+            "answers": [
+                { "title": "Red", "value": 10, "isCorrect": true },
+                { "title": "Green", "value": 10, "isCorrect": true },
+                { "title": "Yellow", "value": 5, "isCorrect": false },
+                { "title": "Blue", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 34,
+            "title": "Identify the mammals.",
+            "answers": [
+                { "title": "Elephant", "value": 10, "isCorrect": true },
+                { "title": "Kangaroo", "value": 10, "isCorrect": true },
+                { "title": "Snake", "value": 5, "isCorrect": false },
+                { "title": "Butterfly", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 35,
+            "title": "Which of the following are programming languages?",
+            "answers": [
+                { "title": "Java", "value": 10, "isCorrect": true },
+                { "title": "C++", "value": 10, "isCorrect": true },
+                { "title": "Mountain", "value": 5, "isCorrect": false },
+                { "title": "Ocean", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 36,
+            "title": "Name the natural disasters.",
+            "answers": [
+                { "title": "Earthquake", "value": 10, "isCorrect": true },
+                { "title": "Tornado", "value": 10, "isCorrect": true },
+                { "title": "Rainbow", "value": 5, "isCorrect": false },
+                { "title": "Avalanche", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 37,
+            "title": "Which of the following are celestial bodies?",
+            "answers": [
+                { "title": "Sun", "value": 10, "isCorrect": true },
+                { "title": "Moon", "value": 10, "isCorrect": true },
+                { "title": "Mars", "value": 5, "isCorrect": false },
+                { "title": "Jupiter", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 38,
+            "title": "Identify the computer components.",
+            "answers": [
+                { "title": "CPU", "value": 10, "isCorrect": true },
+                { "title": "Monitor", "value": 10, "isCorrect": true },
+                { "title": "Table", "value": 5, "isCorrect": false },
+                { "title": "Chair", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 39,
+            "title": "Which of the following are geographical features?",
+            "answers": [
+                { "title": "River", "value": 10, "isCorrect": true },
+                { "title": "Lake", "value": 10, "isCorrect": true },
+                { "title": "Desert", "value": 5, "isCorrect": false },
+                { "title": "Forest", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        },
+        {
+            "id": 40,
+            "title": "Name the human body organs.",
+            "answers": [
+                { "title": "Heart", "value": 10, "isCorrect": true },
+                { "title": "Brain", "value": 10, "isCorrect": true },
+                { "title": "Cloud", "value": 5, "isCorrect": false },
+                { "title": "Liver", "value": 5, "isCorrect": false }
+            ],
+            "points": 20
+        }
+    ]
+}

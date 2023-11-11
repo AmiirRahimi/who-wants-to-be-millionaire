@@ -1,0 +1,15 @@
+@use '../../shared/styles/colors' as *;
+.questions-container {
+    background-color: setColor(black, shade_1);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .questions {
+        width: 50%;
+        height: 50%;
+        background-color: setColor(white, shade_1);
+        border-radius: 8px;
+    }
+}

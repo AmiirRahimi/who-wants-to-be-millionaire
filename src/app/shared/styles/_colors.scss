@@ -1,0 +1,4 @@
+$colors:( black:( shade_1: #817f7f40), white: (shade_1: white));
+@function setColor($colorName, $shade: default) {
+    @return map-get(map-get($colors, $colorName), $shade);
+}
