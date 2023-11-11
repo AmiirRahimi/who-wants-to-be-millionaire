@@ -1,5 +1,21 @@
 <div class="questions-container">
     <div class="questions">
+        <div class="form-container">
+            <div class="question-container">
+                <h2>
+                    <span>{{userQuestions[questionNumberIndex]?.title}}</span>
+                    <span>( {{userQuestions[questionNumberIndex]?.points}} point )</span>
+                </h2>
+                <ul>
+                    <li *ngFor="let answer of userQuestions[questionNumberIndex]?.answers">
+                        <input type="checkbox" [(ngModel)]="answer.isChecked" (click)="checkAnswer(userQuestions[questionNumberIndex]?.answers)">{{answer.title}}
+                    </li>
+                </ul>
+            </div>
 
+            <div class="button-container">
+                <button nz-button nzType="primary" (click)="nextQuestion()"> next question</button>
+            </div>
+        </div>
     </div>
 </div>

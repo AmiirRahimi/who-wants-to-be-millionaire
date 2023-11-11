@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuestionsComponent } from './questions.component';
 import { QuestionsService } from './questions.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 const routes: Routes = [
   {
@@ -17,7 +20,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule.forChild(routes)
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule.forChild(routes),
   ],
   providers:[QuestionsService]
 })
