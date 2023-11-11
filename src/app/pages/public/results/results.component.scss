@@ -1,0 +1,11 @@
+.results {
+    text-align: center;
+    ol {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        li {
+            width: fit-content;
+        }
+    }
+}

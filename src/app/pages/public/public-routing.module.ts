@@ -9,13 +9,17 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: '',
+        redirectTo: 'results',
         pathMatch: 'full'
       },
       {
-        path: '',
+        path: 'auth',
         loadChildren: () => import('./signin-signup/signin-signup.module').then((m) => m.SigninSignupModule)
-      }
+      },
+      {
+        path: 'results',
+        loadChildren: () => import('./results/results.module').then((m) => m.ResultsModule)
+      },
     ]
   },
   

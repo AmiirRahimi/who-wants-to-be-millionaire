@@ -1,0 +1,19 @@
+@use './shared/styles/colors' as *;
+.app-container {
+    background-color: setColor(black, shade_1);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .app-content {
+        width: 50%;
+        height: 50%;
+        background-color: setColor(white, shade_1);
+        border-radius: 8px;
+        box-shadow: 1px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+}
