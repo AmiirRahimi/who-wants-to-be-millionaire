@@ -1,4 +1,4 @@
-@use '../../shared/styles/colors' as *;
+@use '../../../shared/styles/colors' as *;
 .questions-container {
     background-color: setColor(black, shade_1);
     width: 100vw;

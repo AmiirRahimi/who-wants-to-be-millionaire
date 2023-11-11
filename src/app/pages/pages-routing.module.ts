@@ -9,13 +9,17 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: 'questions',
+        redirectTo: '',
         pathMatch: 'full'
       },
       {
-        path: 'questions',
-        loadChildren: () => import('./questions/questions.module').then((m) => m.QuestionsModule)
-      }
+        path: 'private',
+        loadChildren: () => import('./private/private.module').then((m) => m.PrivateModule)
+      },
+      {
+        path: '',
+        loadChildren: () => import('./public/public.module').then((m) => m.PublicModule)
+      },
     ]
   },
   
