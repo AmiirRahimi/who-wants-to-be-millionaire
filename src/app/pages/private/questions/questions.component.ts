@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './questions.service';
-import { AuthService } from 'src/app/shared/services/other-services/authorization.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-questions',
@@ -9,7 +7,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent implements OnInit {
-  public formGroup!: FormGroup
   public questions!: Array<any>
   public userQuestionsIds: Array<number> = []
   public userQuestions: Array<any> = []
@@ -18,22 +15,13 @@ export class QuestionsComponent implements OnInit {
 
   constructor(
     private _questionService: QuestionsService,
-    private _authService: AuthService,
-    private fb: FormBuilder
   ){}
 
   ngOnInit(): void {
     this.getQuestions()
-    this.initForm()
   }
 
-  initForm(){
-    this.formGroup = this.fb.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-    })
-  }
-
+  // check answers for total of answer points
   checkAnswer(answers: any){
     this.totalOfCurrentQuestion = 0
     answers.forEach((answer: any) => {
@@ -78,13 +66,7 @@ export class QuestionsComponent implements OnInit {
     return Math.floor(Math.random() * 100);
   }
 
-  registerUser(){
-    this._authService.createAccount(this.formGroup.value).subscribe(res => {
-      console.log(res);
-      
-    })
-  }
-
+  // go to next question
   nextQuestion(){
     if (this.questionNumberIndex < 4) {
       // this.questionNumberIndex ++

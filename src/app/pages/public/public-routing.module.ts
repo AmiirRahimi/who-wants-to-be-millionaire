@@ -9,11 +9,11 @@ const routes: Routes = [
     children:[
       {
         path: '',
-        redirectTo: 'questions',
+        redirectTo: '',
         pathMatch: 'full'
       },
       {
-        path: 'questions',
+        path: '',
         loadChildren: () => import('./signin-signup/signin-signup.module').then((m) => m.SigninSignupModule)
       }
     ]
@@ -25,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PrivateRoutingModule { }
+export class PublicRoutingModule { }

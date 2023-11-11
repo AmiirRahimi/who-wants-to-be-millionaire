@@ -1,1 +1,19 @@
-<p>signin-signup works!</p>
+<div class="register-container">
+    <h2>Register to start the game</h2>
+    <form [formGroup]="formGroup">
+        <div class="form-item">
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" type="email">
+        </div>
+
+        <div class="form-item">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password">
+        </div>
+
+        <div class="form-button">
+            <button (click)="registerUser()">register</button>
+        </div>
+
+    </form>
+</div>

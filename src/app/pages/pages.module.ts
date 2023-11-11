@@ -8,8 +8,6 @@ import { PublicComponent } from './public/public.component';
 @NgModule({
   declarations: [
     PagesComponent,
-    PrivateComponent,
-    PublicComponent
   ],
   imports: [
     CommonModule,
