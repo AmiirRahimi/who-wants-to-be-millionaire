@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './questions.service';
 import { count } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -12,29 +13,44 @@ export class QuestionsComponent implements OnInit {
   public userQuestionsIds: Array<number> = []
   public userQuestions: Array<any> = []
   public questionNumberIndex: number = 0
-  public totalOfCurrentQuestion: number= 0
+  public totalOfCurrentGame: number= 0
+  public totalOfValues: number = 0
   public noneAnswerValidation: boolean = false
   public showAnswerCorrection: boolean = false
 
   constructor(
     private _questionService: QuestionsService,
+    private _router: Router,
+    private _route: ActivatedRoute
   ){}
 
   ngOnInit(): void {
     this.getQuestions()
   }
 
-  // check answers for total of answer points
-  checkAnswer(answers: any){
-    this.totalOfCurrentQuestion = 0
-    answers.forEach((answer: any) => {
-      if (answer.isChecked === true && answer.isCorrect === true) {
-        this.totalOfCurrentQuestion = this.totalOfCurrentQuestion + answer.value;
-      }
-      if (answer.isChecked === true && answer.isCorrect === false) {
-        this.totalOfCurrentQuestion = this.totalOfCurrentQuestion - answer.value
-      }
+  calculateTotalOfValues(){
+    this.totalOfValues = 0
+    this.userQuestions.forEach(question => {
+      this.totalOfValues += question.points
     })
+  }
+
+  // check answers for total of answer points
+  calculateTotalPoint(){
+    this.userQuestions.forEach(question => {
+      let pointOfEveryQuestion: number = 0
+      question.answers.forEach((answer:any) => {
+        if (answer.isCorrect && answer.isChecked) {
+          pointOfEveryQuestion += answer.value
+        }
+        if (!answer.isCorrect && answer.isChecked) {
+          pointOfEveryQuestion -= answer.value
+        }
+      })
+      this.totalOfCurrentGame += pointOfEveryQuestion
+    })
+    console.log(this.totalOfCurrentGame);
+    
   }
 
   // Fetch questions
@@ -42,6 +58,7 @@ export class QuestionsComponent implements OnInit {
     this._questionService.getQuestions().subscribe(res => {
       this.questions = res
       this.chooseUserQuestions()
+      this.calculateTotalOfValues()
     })
   }
 
@@ -53,6 +70,8 @@ export class QuestionsComponent implements OnInit {
     this.userQuestionsIds.forEach(id => {
       this.userQuestions.push(this.questions[id])
     })
+    console.log(this.userQuestions);
+    
   }
 
   addQuestionId(){
@@ -76,14 +95,17 @@ export class QuestionsComponent implements OnInit {
       this.showAnswerCorrection = true
       setTimeout(() => {
         this.showAnswerCorrection = false
-        if (this.questionNumberIndex < 4) {
+        if (this.questionNumberIndex < 5) {
           this.questionNumberIndex ++
+        }
+        if (this.questionNumberIndex == 5) {
+          this.calculateTotalPoint()
+          this._router.navigate([''])
         }
       },2000);
     }else{
       this.noneAnswerValidation = true
     }
-    
   }
 
   checkForNoneAnswer(){

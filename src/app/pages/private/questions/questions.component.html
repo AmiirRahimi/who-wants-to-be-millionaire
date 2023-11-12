@@ -1,12 +1,17 @@
 <div class="form-container">
     <div class="question-container">
+        <p>question number {{questionNumberIndex+1}}</p>
         <h2>
             <span>{{userQuestions[questionNumberIndex]?.title}}</span>
             <span>( {{userQuestions[questionNumberIndex]?.points}} point )</span>
         </h2>
         <ul>
             <li *ngFor="let answer of userQuestions[questionNumberIndex]?.answers" [ngClass]="{'correct': answer.isChecked && answer.isCorrect && showAnswerCorrection , 'false': answer.isChecked && !answer.isCorrect && showAnswerCorrection}">
-                <input type="checkbox" [(ngModel)]="answer.isChecked" (change)="checkAnswer(userQuestions[questionNumberIndex]?.answers)">{{answer.title}}
+                <div>
+                    <input type="checkbox" [(ngModel)]="answer.isChecked">{{answer.title}}
+                </div>
+                <p *ngIf="showAnswerCorrection && answer.isChecked"><span *ngIf="answer.isCorrect else negative">+</span>
+                    <ng-template #negative>-</ng-template>{{answer.value}}</p>
             </li>
         </ul>
         <p class="none-answer" *ngIf="noneAnswerValidation">please select at least one answer</p>
@@ -15,3 +20,10 @@
         <button [disabled]="showAnswerCorrection" nz-button nzType="primary" (click)="nextQuestion()"> next question</button>
     </div>
 </div>
+
+<ng-template>
+    <div class="game-result">
+        <h2>your total score is{{totalOfCurrentGame}}</h2>
+        <h3>you can earn </h3>
+    </div>
+</ng-template>
