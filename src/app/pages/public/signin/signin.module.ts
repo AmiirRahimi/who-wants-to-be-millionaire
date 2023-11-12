@@ -1,27 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SigninSignupComponent } from './signin-signup.component';
+import { SigninComponent } from './signin.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/other-services/authorization.service';
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-{
-  path: '',
-  component: SigninSignupComponent
-}
+  {
+    path: '',
+    component: SigninComponent
+  }
 ]
 
 @NgModule({
-  declarations: [SigninSignupComponent],
+  declarations: [
+    SigninComponent
+  ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
-    ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forChild(routes)
   ],
   providers:[AuthService]
 })
-export class SigninSignupModule { }
+export class SigninModule { }

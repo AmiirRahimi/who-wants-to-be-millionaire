@@ -14,6 +14,9 @@
         <div class="form-button">
             <button (click)="registerUser()">register</button>
         </div>
-
+        <p>Already have an account?
+            <a>Login</a>
+        </p>
+        <p class="validation" *ngIf="showValidation">User already exist</p>
     </form>
 </div>

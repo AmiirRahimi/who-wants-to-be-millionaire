@@ -1,0 +1,22 @@
+<div class="register-container">
+    <h2>Login to start the game</h2>
+    <form [formGroup]="formGroup">
+        <div class="form-item">
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" type="email">
+        </div>
+
+        <div class="form-item">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password">
+        </div>
+
+        <div class="form-button">
+            <button (click)="loginUser()">register</button>
+        </div>
+        <p>Dont have an account?
+            <a>singup</a>
+        </p>
+        <p class="validation" *ngIf="showValidation">User not found</p>
+    </form>
+</div>

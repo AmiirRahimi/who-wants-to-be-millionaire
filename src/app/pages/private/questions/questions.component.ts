@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './questions.service';
+import { count } from 'rxjs';
 
 @Component({
   selector: 'app-questions',
@@ -10,8 +11,10 @@ export class QuestionsComponent implements OnInit {
   public questions!: Array<any>
   public userQuestionsIds: Array<number> = []
   public userQuestions: Array<any> = []
-  public questionNumberIndex: number = -1
+  public questionNumberIndex: number = 0
   public totalOfCurrentQuestion: number= 0
+  public noneAnswerValidation: boolean = false
+  public showAnswerCorrection: boolean = false
 
   constructor(
     private _questionService: QuestionsService,
@@ -68,10 +71,28 @@ export class QuestionsComponent implements OnInit {
 
   // go to next question
   nextQuestion(){
-    if (this.questionNumberIndex < 4) {
-      // this.questionNumberIndex ++
+    if (this.checkForNoneAnswer() != 0) {
+      this.noneAnswerValidation = false
+      this.showAnswerCorrection = true
+      setTimeout(() => {
+        this.showAnswerCorrection = false
+        if (this.questionNumberIndex < 4) {
+          this.questionNumberIndex ++
+        }
+      },2000);
+    }else{
+      this.noneAnswerValidation = true
     }
-    console.log(this.totalOfCurrentQuestion);
     
+  }
+
+  checkForNoneAnswer(){
+    let counter = 0
+    this.userQuestions[this.questionNumberIndex].answers.forEach((answer: any) => {
+      if (answer?.isChecked === true) {
+        counter ++;
+      }
+    })
+    return counter
   }
 }

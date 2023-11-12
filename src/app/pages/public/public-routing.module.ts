@@ -13,8 +13,12 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'auth',
-        loadChildren: () => import('./signin-signup/signin-signup.module').then((m) => m.SigninSignupModule)
+        path: 'signUp',
+        loadChildren: () => import('./signup/signup.module').then((m) => m.SignupModule)
+      },
+      {
+        path: 'signIn',
+        loadChildren: () => import('./signin/signin.module').then((m) => m.SigninModule)
       },
       {
         path: 'results',
