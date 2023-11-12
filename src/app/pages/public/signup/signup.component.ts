@@ -33,19 +33,23 @@ export class SignupComponent implements OnInit {
     })
   }
 
-  registerUser(){
-    this._authService.createAccount(this.formGroup.value).subscribe((res:any) => {
-      switch (res.status) {
-        case 201:
-          this._router.navigate(['../private/questions'], {relativeTo: this._route})
-          break;
-        case 409:
-          this.showValidation = true
-          setTimeout(()=> {
-            this.showValidation = false
-          }, 2000)
-          break;
-      }
-    })
+  async registerUser(){
+    const newUser = await this._authService.createAccount(this.formGroup.value)
+    console.log(newUser);
+    
+    if (newUser) {
+      switch (newUser.status) {
+            case 201:
+              localStorage.setItem('token', newUser.token)
+              this._router.navigate(['../private/questions'], {relativeTo: this._route})
+              break;
+            case 409:
+              this.showValidation = true
+              setTimeout(()=> {
+                this.showValidation = false
+              }, 2000)
+              break;
+          }
+    }
   }
 }

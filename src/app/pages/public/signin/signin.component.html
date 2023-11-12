@@ -1,4 +1,4 @@
-<div class="register-container">
+<div class="login-container">
     <h2>Login to start the game</h2>
     <form [formGroup]="formGroup">
         <div class="form-item">
@@ -12,11 +12,14 @@
         </div>
 
         <div class="form-button">
-            <button (click)="loginUser()">register</button>
+            <button [disabled]="!formGroup.valid" (click)="loginUser()">login</button>
         </div>
         <p>Dont have an account?
-            <a>singup</a>
+            <a routerLink="../signUp">singUp</a>
         </p>
-        <p class="validation" *ngIf="showValidation">User not found</p>
+        <p class="home-page">
+            <a routerLink="../results">home page</a>
+        </p>
+        <p class="validation" *ngIf="showValidation">{{validationText}}</p>
     </form>
 </div>

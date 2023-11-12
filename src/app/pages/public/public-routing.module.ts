@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PublicComponent } from './public.component';
+import { LoginGuard } from 'src/app/core/guards/login.guard';
 
 const routes: Routes = [
   {
@@ -14,11 +15,13 @@ const routes: Routes = [
       },
       {
         path: 'signUp',
-        loadChildren: () => import('./signup/signup.module').then((m) => m.SignupModule)
+        loadChildren: () => import('./signup/signup.module').then((m) => m.SignupModule),
+        canActivate:[LoginGuard]
       },
       {
         path: 'signIn',
-        loadChildren: () => import('./signin/signin.module').then((m) => m.SigninModule)
+        loadChildren: () => import('./signin/signin.module').then((m) => m.SigninModule),
+        canActivate:[LoginGuard]
       },
       {
         path: 'results',

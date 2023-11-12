@@ -3,10 +3,8 @@
     <div class="result-content">
         Player score
         <ol>
-            <li>amir</li>
-            <li>amir</li>
-            <li>amir</li>
-            <li>amir</li>
+            <li *ngFor="let user of users">{{user.email}}</li>
+
         </ol>
     </div>
     <div>

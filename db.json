@@ -1041,44 +1041,9 @@
         }
     ],
     "user": [{
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 1
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 2
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 3
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 4
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 5
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 6
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 7
-        },
-        {
-            "email": "amirrahimi7162@gmail.com",
-            "password": "1234",
-            "id": 8
-        }
-    ]
+        "email": "test@test.com",
+        "password": "1234",
+        "token": "f660ab912ec121d1b1e928a0bb4bc61b15f5ad44d5efdc4e1c92a25e99b8e44a",
+        "id": 2
+    }]
 }

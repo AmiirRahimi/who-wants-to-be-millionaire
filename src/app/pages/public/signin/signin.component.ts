@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/shared/services/other-services/authorizatio
 export class SigninComponent {
   public formGroup!: FormGroup
   public showValidation: boolean = false
+  public validationText!: string
 
   constructor(
     private fb: FormBuilder,
@@ -31,7 +32,22 @@ export class SigninComponent {
     })
   }
 
-  loginUser(){
-
+  async loginUser(){
+    const user = await this._authService.loginUser(this.formGroup.value)
+    if (user.status != 409 && user.status != 404) {
+      this._router.navigate(['../private/questions'], {relativeTo: this._route})
+      localStorage.setItem('token', user)
+    }else{
+      this.showValidation = true
+      setTimeout(() => {
+        this.showValidation = false
+      }, 2000);
+    }
+    if (user.status === 404) {
+      this.validationText = 'Username or password is wrong'
+    }
+    if (user.status === 409) {
+      this.validationText = 'User not found'
+    }
   }
 }

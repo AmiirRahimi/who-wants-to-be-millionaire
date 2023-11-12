@@ -1,0 +1,35 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    form {
+        .form-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 8px;
+            label {
+                margin-right: 8px;
+            }
+        }
+        .form-button {
+            button {
+                margin-top: 8px;
+                width: 100%;
+            }
+        }
+        .validation {
+            color: red;
+            text-align: center;
+        }
+        a {
+            color: blue;
+            cursor: pointer;
+        }
+        .home-page {
+            text-align: center;
+        }
+    }
+}
