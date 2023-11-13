@@ -103,18 +103,21 @@ export class AddNewQuestionComponent implements OnInit {
 
   saveQuestion(){
     this.noneAnswerValidation = false
-    if (this.checkForNoneAnswer() > 0) {
-      this.noneAnswerValidation = true
-    }else{
-      this.totalPointsOfQuestion()
-      this._addNewQuestionService.addNewQuestion(this.newQuestion).subscribe(res => {
-        this.newQuestion = this.noneNewQuestion()
-        this.addSuccess = true;
-        setTimeout(() => {
-          this.addSuccess = false
-        }, 1500);
-      })
+    if (this.totalPoint <= 20) {
+      if (this.checkForNoneAnswer() > 0) {
+        this.noneAnswerValidation = true
+      }else{
+        this.totalPointsOfQuestion()
+        this._addNewQuestionService.addNewQuestion(this.newQuestion).subscribe(res => {
+          this.newQuestion = this.noneNewQuestion()
+          this.addSuccess = true;
+          setTimeout(() => {
+            this.addSuccess = false
+          }, 1500);
+        })
+      }
     }
+    
   }
 
 }

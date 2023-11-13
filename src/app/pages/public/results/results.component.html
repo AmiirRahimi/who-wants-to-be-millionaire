@@ -1,10 +1,10 @@
 <div class="results">
     <h2>Who wants to be millionaire?</h2>
-    <strong *ngIf="userScores?.finalScore">you can earn {{userScores?.finalScore}} but you earn {{userScores?.currentScore}}</strong>
+    <strong *ngIf="userScores?.finalScore">you can earn {{userScores?.finalScore}} point but you earn {{userScores?.currentScore}} point</strong>
     <br/>
     <br/>
     <div class="result-content">
-        Players score <span *ngIf="users.length > 5">(scroll to see more)</span>
+        Players score <span *ngIf="users?.length > 5">(scroll to see more)</span>
         <ol>
             <li *ngFor="let user of users"> <strong>User:</strong> {{user.email}} <strong>Last score:</strong>{{user.score.currentScore}} <strong>Total score:</strong>{{user.score.totalScore}} <strong>Date of last game:</strong>{{user.score.timeStamp | date}}</li>
         </ol>

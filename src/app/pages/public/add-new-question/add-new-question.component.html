@@ -8,7 +8,8 @@
         answer{{i+1}}:<input type="text" [(ngModel)]="answer.title"> is correct:<input type="checkbox" [(ngModel)]="answer.isCorrect" (ngModelChange)="setValue(answer.isCorrect, i)"> point of answer:<input (input)="limitInput($event, i)" [disabled]="!answer.isCorrect"
             type="number" [(ngModel)]="answer.value">
     </div>
-    <p class="none-answer" *ngIf="noneAnswerValidation">please fill out question title and answers title, and at least one answer must be correct</p>
+    <p class="none-answer" *ngIf="noneAnswerValidation">Please fill out question title and answers title, and at least one answer must be correct</p>
+    <p class="none-answer" *ngIf="totalPoint > 20">Total of correct answers values should be at least 20</p>
 
     <div class="text-container">
         <div class="space">

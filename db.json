@@ -1038,32 +1038,6 @@
                 }
             ],
             "points": 20
-        },
-        {
-            "title": "test",
-            "point": 5,
-            "answers": [{
-                    "title": "test1",
-                    "value": 5,
-                    "isCorrect": true
-                },
-                {
-                    "title": "test2",
-                    "value": -5,
-                    "isCorrect": false
-                },
-                {
-                    "title": "test3",
-                    "value": -5,
-                    "isCorrect": false
-                },
-                {
-                    "title": "test4",
-                    "value": -5,
-                    "isCorrect": false
-                }
-            ],
-            "id": 41
         }
     ],
     "user": [{
@@ -1072,8 +1046,8 @@
             "token": "f660ab912ec121d1b1e928a0bb4bc61b15f5ad44d5efdc4e1c92a25e99b8e44a",
             "score": {
                 "currentScore": 25,
-                "totalScore": 160,
-                "timeStamp": 1699857108297
+                "totalScore": 220,
+                "timeStamp": 1699876411368
             },
             "id": 2
         },
