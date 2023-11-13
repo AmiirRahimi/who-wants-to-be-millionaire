@@ -72,7 +72,8 @@ export class QuestionsComponent implements OnInit {
 
   addQuestionId(){
     let selectedNumber = this.generateNumber()
-    while(selectedNumber > 39){
+    const numberOfGeneration = this.questions.length -1
+    while(selectedNumber > numberOfGeneration){
       selectedNumber = this.generateNumber()
     }
     if (!this.userQuestionsIds.includes(selectedNumber)) {

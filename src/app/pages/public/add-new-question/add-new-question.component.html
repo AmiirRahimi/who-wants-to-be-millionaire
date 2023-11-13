@@ -9,10 +9,13 @@
             type="number" [(ngModel)]="answer.value">
     </div>
     <p class="none-answer" *ngIf="noneAnswerValidation">please fill out question title and answers title, and at least one answer must be correct</p>
-    <div class="space">
-        <button (click)="saveQuestion()">save question</button>
+
+    <div class="text-container">
+        <div class="space">
+            <button (click)="saveQuestion()">save question</button>
+        </div>
+        <p>the value of incorrect answer is -5</p>
+        <p class="success" *ngIf="addSuccess">add successfully</p>
+        <p>go to <a routerLink="">Home page</a></p>
     </div>
-    <p>the value of incorrect answer is -5</p>
-    <p class="success" *ngIf="addSuccess">add successfully</p>
-    <p>go to <a routerLink="">Home page</a></p>
 </div>

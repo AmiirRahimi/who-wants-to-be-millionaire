@@ -8,6 +8,10 @@
         width: 25%;
         float: right;
     }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
     .question-container {
         ul {
             padding: 0px;
@@ -33,14 +37,14 @@
                 align-items: center;
             }
         }
-        .none-answer {
-            color: red;
-        }
         .correct {
             background-color: #00800078;
         }
         .false {
             background-color: #80000078;
         }
+    }
+    .none-answer {
+        color: red;
     }
 }

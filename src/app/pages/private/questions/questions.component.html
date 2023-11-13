@@ -14,11 +14,12 @@
                     <ng-template #negative>-</ng-template>{{answer.value}}</p>
             </li>
         </ul>
-        <p class="none-answer" *ngIf="noneAnswerValidation">please select at least one answer</p>
     </div>
     <div class="button-container">
+        <button [disabled]="showAnswerCorrection" nz-button nzType="primary" [routerLink]="''"> exit the game</button>
         <button [disabled]="showAnswerCorrection" nz-button nzType="primary" (click)="nextQuestion()"> next question</button>
     </div>
+    <p class="none-answer" *ngIf="noneAnswerValidation">please select at least one answer</p>
 </div>
 
 <ng-template>
