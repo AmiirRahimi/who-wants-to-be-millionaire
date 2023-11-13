@@ -82,6 +82,14 @@ export class AuthService extends HttpBaseService {
 
       }
 
+      async getUser(){
+        const token = localStorage.getItem('token')
+        const user = await lastValueFrom(this._http.get(`${this._apiUrl}/user?token=${token}`).pipe(map((res:any) => {
+            return res[0]
+        })))
+        return user
+      }
+
       async validateToken(token: string){
         const user = await lastValueFrom(this._http.get(`${this._apiUrl}/user?token=${token}`).pipe(map((res:any) => {
             return res[0]

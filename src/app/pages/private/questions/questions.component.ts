@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './questions.service';
-import { count } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/other-services/authorization.service';
 
 @Component({
   selector: 'app-questions',
@@ -21,7 +21,7 @@ export class QuestionsComponent implements OnInit {
   constructor(
     private _questionService: QuestionsService,
     private _router: Router,
-    private _route: ActivatedRoute
+    private _authService: AuthService,
   ){}
 
   ngOnInit(): void {
@@ -49,8 +49,6 @@ export class QuestionsComponent implements OnInit {
       })
       this.totalOfCurrentGame += pointOfEveryQuestion
     })
-    console.log(this.totalOfCurrentGame);
-    
   }
 
   // Fetch questions
@@ -76,7 +74,7 @@ export class QuestionsComponent implements OnInit {
 
   addQuestionId(){
     let selectedNumber = this.generateNumber()
-    while(selectedNumber > 40){
+    while(selectedNumber > 39){
       selectedNumber = this.generateNumber()
     }
     if (!this.userQuestionsIds.includes(selectedNumber)) {
@@ -85,11 +83,16 @@ export class QuestionsComponent implements OnInit {
   }
 
   generateNumber(){
-    return Math.floor(Math.random() * 100);
+    return Math.floor(Math.random() * 100) + 1;
   }
 
   // go to next question
-  nextQuestion(){
+  async nextQuestion(){
+    const user = await this._authService.getUser()
+    let totalScore = 0
+    if (user.score.totalScore) {
+      totalScore = user.score.totalScore
+    }
     if (this.checkForNoneAnswer() != 0) {
       this.noneAnswerValidation = false
       this.showAnswerCorrection = true
@@ -100,12 +103,17 @@ export class QuestionsComponent implements OnInit {
         }
         if (this.questionNumberIndex == 5) {
           this.calculateTotalPoint()
+          this._questionService.updateUserScore({score: {currentScore: this.totalOfCurrentGame,totalScore: totalScore + this.totalOfCurrentGame,timeStamp: Date.now()}})
           this._router.navigate([''])
         }
-      },2000);
+      },1500);
     }else{
       this.noneAnswerValidation = true
     }
+  }
+
+  updateUserScore(){
+
   }
 
   checkForNoneAnswer(){

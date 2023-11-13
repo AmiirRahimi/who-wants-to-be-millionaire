@@ -3,11 +3,13 @@
     <div class="result-content">
         Player score
         <ol>
-            <li *ngFor="let user of users">{{user.email}}</li>
-
+            <li *ngFor="let user of users">{{user.email}} <strong>currentScore:</strong>{{user.score.currentScore}} <strong>totalScore:</strong>{{user.score.totalScore}} <strong>date:</strong>{{user.score.timeStamp | date}}</li>
         </ol>
     </div>
     <div>
         Want to PLAY?<a routerLink="../signIn"> click here</a>
     </div>
+    <p *ngIf="!!token" (click)="logout()">
+        logout
+    </p>
 </div>
