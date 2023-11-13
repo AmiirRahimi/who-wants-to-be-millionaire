@@ -4,10 +4,10 @@ import { AddNewQuestionComponent } from './add-new-question.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
-const route: Routes = [
+const routes: Routes = [
   {
     path: '',
-    component: AddNewQuestionComponent
+    component:AddNewQuestionComponent
   }
 ]
 
@@ -17,7 +17,7 @@ const route: Routes = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(route)
+    RouterModule.forChild(routes)
   ]
 })
 export class AddNewQuestionModule { }

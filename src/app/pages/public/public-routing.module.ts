@@ -29,7 +29,7 @@ const routes: Routes = [
       },
       {
         path: 'add-new',
-        loadChildren: () => import('./add-new-question/add-new-question.component').then((m) => m.AddNewQuestionComponent)
+        loadChildren: () => import('./add-new-question/add-new-question.module').then((m) => m.AddNewQuestionModule)
       },
     ]
   },

@@ -1,8 +1,18 @@
 <div class="add-new-question">
-    <label for="questionTitle">question title</label>
-    <input id="questionTitle" [(ngModel)]="newQuestion.title" type="title">
-
-    <div *ngFor="let answer of newQuestion.answers;let i = index">
-        answer {{i+1}}<input type="text"> is correct <input type="checkbox"> point of answer<input type="number">
+    <div class="space">
+        <label for="questionTitle">question title</label>
+        <input [(ngModel)]="newQuestion.title" type="text">
+        <p>total points: {{totalPoint}}</p>
     </div>
+    <div class="space" *ngFor="let answer of newQuestion.answers;let i = index">
+        answer{{i+1}}:<input type="text" [(ngModel)]="answer.title"> is correct:<input type="checkbox" [(ngModel)]="answer.isCorrect" (ngModelChange)="setValue(answer.isCorrect, i)"> point of answer:<input (input)="limitInput($event, i)" [disabled]="!answer.isCorrect"
+            type="number" [(ngModel)]="answer.value">
+    </div>
+    <p class="none-answer" *ngIf="noneAnswerValidation">please fill out question title and answers title, and at least one answer must be correct</p>
+    <div class="space">
+        <button (click)="saveQuestion()">save question</button>
+    </div>
+    <p>the value of incorrect answer is -5</p>
+    <p class="success" *ngIf="addSuccess">add successfully</p>
+    <p>go to <a routerLink="">Home page</a></p>
 </div>

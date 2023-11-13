@@ -1079,6 +1079,33 @@
         }
       ],
       "points": 20
+    },
+    {
+      "title": "test",
+      "point": 5,
+      "answers": [
+        {
+          "title": "test1",
+          "value": 5,
+          "isCorrect": true
+        },
+        {
+          "title": "test2",
+          "value": -5,
+          "isCorrect": false
+        },
+        {
+          "title": "test3",
+          "value": -5,
+          "isCorrect": false
+        },
+        {
+          "title": "test4",
+          "value": -5,
+          "isCorrect": false
+        }
+      ],
+      "id": 41
     }
   ],
   "user": [
@@ -1102,6 +1129,17 @@
         "currentScore": -10,
         "totalScore": 180,
         "timeStamp": 1699861182316
+      }
+    },
+    {
+      "email": "test3@test.com",
+      "password": "1234",
+      "token": "a862f0e6ac9ce4c636cc9a49b621215ae0e9bace8f7964e8486205c9f0f2079e",
+      "id": 4,
+      "score": {
+        "currentScore": 0,
+        "totalScore": 0,
+        "timeStamp": 1699874044797
       }
     }
   ]
