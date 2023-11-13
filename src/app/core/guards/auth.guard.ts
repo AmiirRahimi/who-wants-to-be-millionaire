@@ -15,8 +15,6 @@ export const AuthGuard: CanActivateFn = async (
   const router = inject(Router);
   const token = localStorage.getItem('token') as string
     const isValidate = await authService.validateToken(token)
-    console.log(isValidate);
-    
     if (isValidate.status === 200) {
       return true
     }

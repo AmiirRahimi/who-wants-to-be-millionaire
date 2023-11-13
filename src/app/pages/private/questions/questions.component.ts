@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from './questions.service';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/other-services/authorization.service';
 
 @Component({
@@ -68,8 +68,6 @@ export class QuestionsComponent implements OnInit {
     this.userQuestionsIds.forEach(id => {
       this.userQuestions.push(this.questions[id])
     })
-    console.log(this.userQuestions);
-    
   }
 
   addQuestionId(){
@@ -90,7 +88,7 @@ export class QuestionsComponent implements OnInit {
   async nextQuestion(){
     const user = await this._authService.getUser()
     let totalScore = 0
-    if (user.score.totalScore) {
+    if (user.score?.totalScore) {
       totalScore = user.score.totalScore
     }
     if (this.checkForNoneAnswer() != 0) {
@@ -104,7 +102,7 @@ export class QuestionsComponent implements OnInit {
         if (this.questionNumberIndex == 5) {
           this.calculateTotalPoint()
           this._questionService.updateUserScore({score: {currentScore: this.totalOfCurrentGame,totalScore: totalScore + this.totalOfCurrentGame,timeStamp: Date.now()}})
-          this._router.navigate([''])
+          this._router.navigate([''], {queryParams: {finalScore: this.totalOfValues, currentScore: this.totalOfCurrentGame}})
         }
       },1500);
     }else{

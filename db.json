@@ -1088,10 +1088,21 @@
       "token": "f660ab912ec121d1b1e928a0bb4bc61b15f5ad44d5efdc4e1c92a25e99b8e44a",
       "score": {
         "currentScore": 25,
-        "totalScore": 135,
-        "timeStamp": 1699819192973
+        "totalScore": 160,
+        "timeStamp": 1699857108297
       },
       "id": 2
+    },
+    {
+      "email": "test1@test.com",
+      "password": "1234",
+      "token": "ca95d3148cd18273e48e84167a465de77b65a72ac3ae0d4bd84dd175c390abe2",
+      "id": 3,
+      "score": {
+        "currentScore": -10,
+        "totalScore": 180,
+        "timeStamp": 1699861182316
+      }
     }
   ]
 }

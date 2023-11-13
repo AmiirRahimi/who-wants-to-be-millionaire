@@ -22,4 +22,8 @@ export class SubscriptionService{
     getSubject(){
      return this.subject.asObservable()
     }
+
+    unsubscribe(){
+     this.subject.unsubscribe()
+    }
    }

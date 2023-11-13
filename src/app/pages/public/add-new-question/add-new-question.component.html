@@ -1,0 +1,8 @@
+<div class="add-new-question">
+    <label for="questionTitle">question title</label>
+    <input id="questionTitle" [(ngModel)]="newQuestion.title" type="title">
+
+    <div *ngFor="let answer of newQuestion.answers;let i = index">
+        answer {{i+1}}<input type="text"> is correct <input type="checkbox"> point of answer<input type="number">
+    </div>
+</div>

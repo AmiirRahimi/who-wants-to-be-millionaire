@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'results',
         loadChildren: () => import('./results/results.module').then((m) => m.ResultsModule)
       },
+      {
+        path: 'add-new',
+        loadChildren: () => import('./add-new-question/add-new-question.component').then((m) => m.AddNewQuestionComponent)
+      },
     ]
   },
   
